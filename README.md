@@ -47,10 +47,12 @@ A 4th layer can be added, but this requires more requests to the server. And the
 There are still gaps between tiles. Because 3 layers cannot cover the whole picture. As I mentioned before, adding the 4th layer takes a lot of time. _Creates different patterns at different layer sizes or different image sizes._
 
 1. The first type of gap is a rectangular gap caused by the layers not covering the entire surface.
-   ![ApplicationFrameHost_gi2wJ9xWLc](https://user-images.githubusercontent.com/16024979/223570301-af983e27-7ae8-4fc7-861d-49b33f9ff82a.png)
+
+![ApplicationFrameHost_gi2wJ9xWLc](https://user-images.githubusercontent.com/16024979/223570301-af983e27-7ae8-4fc7-861d-49b33f9ff82a.png)
 
 2. The second type of gap is caused by downsizing the 600px layer to 599. Because the server is actually sending 1 pixel lower because of the decimal values widthmedium and heightmedium. (it took me a long time to figure it out)
-   ![ApplicationFrameHost_94IWLMzX2R](https://user-images.githubusercontent.com/16024979/223570295-baa7c330-8363-4384-af4d-e4880a7eb9fe.png)
+
+![ApplicationFrameHost_94IWLMzX2R](https://user-images.githubusercontent.com/16024979/223570295-baa7c330-8363-4384-af4d-e4880a7eb9fe.png)
 
 This can be solved with the Healing Brush Tool in Photoshop.
 
