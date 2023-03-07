@@ -44,5 +44,5 @@ A 4th layer can be added, but this requires more requests to the server. And the
 
 > You can find more results in the [Results Gallery](./Gallery.md).
 
-![](https://i.imgur.com/0hbCsxz.jpeg)
-![](https://i.imgur.com/TfCArU9.jpeg)
+[![](https://i.imgur.com/0hbCsxz.jpeg)](https://fineartamerica.com/featured/models-sitting-on-sand-dunes-clifford-coffin.html)
+[![](https://i.imgur.com/TfCArU9.jpeg)](https://fineartamerica.com/featured/the-vision-of-the-valley-of-dry-bones-gustave-dore.html)
