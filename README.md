@@ -1,6 +1,6 @@
 # FineArtDown
 
-Download full size images from [Fine Art America](https://fineartamerica.com/), [Conde Nast Store](https://condenaststore.com/), [Photos.com](https://photos.com/) and [Pixels.com](https://pixels.com/). You can check results in the [Results Gallery](./Gallery.md).
+Download full size images from **[Fine Art America](https://fineartamerica.com/)**, **[Conde Nast Store](https://condenaststore.com/)**, **[Photos.com](https://photos.com/)** and **[Pixels.com](https://pixels.com/)**. You can check results in the _[Results Gallery](./Gallery.md)_.
 
 ## Usage
 
@@ -39,6 +39,24 @@ A 4th layer can be added, but this requires more requests to the server. And the
 - [540, 600, 667] = [(600*0.9),600,(600/0.9)] : Disadvantages: Need to upscale 600px->667px. So much float numbers in backend and gap numbers. Advantages: Less tiles=less requests to the server.
 
 - [486, 540, 600] = [((600*0.9)*0.9),(600*0.9),600] : I've tried many combinations and this is the best one so far.
+
+## Known Problems:
+
+### Gaps Between Tiles:
+
+There are still gaps between tiles. Because 3 layers cannot cover the whole picture. As I mentioned before, adding the 4th layer takes a lot of time. _Creates different patterns at different layer sizes or different image sizes._
+
+1. The first type of gap is a rectangular gap caused by the layers not covering the entire surface.
+   ![ApplicationFrameHost_gi2wJ9xWLc](https://user-images.githubusercontent.com/16024979/223570301-af983e27-7ae8-4fc7-861d-49b33f9ff82a.png)
+
+2. The second type of gap is caused by downsizing a 600px layer to 599. Because the server is actually sending 1 pixel lower because of the decimal values widthmedium and heightmedium. (it took me a long time to figure it out)
+   ![ApplicationFrameHost_94IWLMzX2R](https://user-images.githubusercontent.com/16024979/223570295-baa7c330-8363-4384-af4d-e4880a7eb9fe.png)
+
+This can be solved with the Healing Brush Tool in Photoshop.
+
+### Limited Request to Server
+
+The server sends the content "---" instead of the image after a certain number of requests within a certain period of time. Therefore, I added a rule to the download function that if it fails, it retries after a certain delay. That's why it takes longer to download an image.
 
 ## Results
 
