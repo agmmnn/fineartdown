@@ -1,3 +1,5 @@
+![](https://i.imgur.com/fjyFiqX.png)
+
 # FineArtDown
 
 Download full size images from **[Fine Art America](https://fineartamerica.com/)**, **[Conde Nast Store](https://condenaststore.com/)**, **[Photos.com](https://photos.com/)** and **[Pixels.com](https://pixels.com/)**. You can check results in the _[Results Gallery](./Gallery.md)_.
@@ -36,9 +38,11 @@ A 4th layer can be added, but this requires more requests to the server. And the
 
 [![](https://user-images.githubusercontent.com/16024979/223557774-b2622c6e-8c4c-45e1-919d-1c3487f4eaf2.png)](https://fineartamerica.com/featured/saint-tropez-boucherie-slim-aarons.html)
 
-- [540, 600, 667] = [(600*0.9),600,(600/0.9)] : Disadvantages: Need to upscale 600px->667px. So much float numbers in backend and gap numbers. Advantages: Less tiles=less requests to the server.
+- [540, 600, 667] = [(600\*0.9),600,(600/0.9)] : Disadvantages: Need to upscale 600px->667px. So much float numbers in backend and gap numbers. Advantages: Less tiles=less requests to the server.
 
-- [486, 540, 600] = [((600*0.9)*0.9),(600*0.9),600] : I've tried many combinations and this is the best one so far.
+- [486, 540, 600] = [((600\*0.9)\*0.9),(600\*0.9),600] : I've tried many combinations and this is the best one so far.
+
+> You can make calculations using the [calculator project](./calculator-project/).
 
 ## Known Problems:
 
