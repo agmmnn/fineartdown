@@ -8,7 +8,11 @@ Download full size images from **[Fine Art America](https://fineartamerica.com/)
 
 1. Download the executable from [Releases](https://github.com/agmmnn/fineartdown/releases).
 1. Open your terminal in the path where the executable file is located.
-1. Run the command: `.\fineartdown-win <url>`
+1. Run the command: `.\fineartdown-[your-os] <url>`
+
+```
+> ./fineartdown-win https://fineartamerica.com/featured/dancing-octopus-barathieu-gabriel.html
+```
 
 ### From npm
 
