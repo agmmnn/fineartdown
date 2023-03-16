@@ -354,4 +354,5 @@ if (arg) {
   getInfo(arg).then(() => downloader());
 } else {
   console.log("You did not give a URL");
+  process.exit();
 }
