@@ -1,6 +1,6 @@
 {
   "name": "fineartdown",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Download full size images from Fine Art America, Conde Nast, Photos.com, Pixels.com",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
