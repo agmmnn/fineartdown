@@ -6,6 +6,12 @@ Download full size images from **[Fine Art America](https://fineartamerica.com/)
 
 ## Usage
 
+1. Download the executable from [Releases](https://github.com/agmmnn/fineartdown/releases).
+1. Open your terminal in the path where the executable file is located.
+1. Run the command: `.\fineartdown-win <url>`
+
+### From npm
+
 ```
 npm install -g fineartdown
 
