@@ -1,7 +1,6 @@
 import Types from "./main.d";
 
 import { downloadfile } from "./download";
-import axios from "axios";
 import { load } from "cheerio";
 import { createCanvas, loadImage } from "canvas";
 import fs from "fs";
@@ -312,7 +311,7 @@ async function downloader() {
 
 const getInfo = async (arg: string) => {
   const previewResult = async (id: string) =>
-    await axios.get(
+    await fetch(
       "https://fineartamerica.com/showpreviewimage.php?artworkid=" + id
     ); //url.origin;
 
@@ -320,15 +319,18 @@ const getInfo = async (arg: string) => {
   if (arg.startsWith("http")) {
     const url = new URL(arg);
     const baseUrl = url.origin + url.pathname;
-    const res = await axios.get(baseUrl);
-    const $ = load(res.data);
+    const res = await fetch(baseUrl);
+    const text = await res.text();
+    const $ = load(text);
     const script = $('script:contains("globalArtworkId")').html();
     globalArtworkId = script!.match(/globalArtworkId\s*=\s*'(\d+)';/)![1];
   } else {
     globalArtworkId = arg;
   }
 
-  const $$ = load(await previewResult(globalArtworkId).then((res) => res.data));
+  const $$ = load(
+    await previewResult(globalArtworkId).then((res) => res.text())
+  );
   const text = $$("#targetimagemessage").parent().text();
   const sizeMatch = text.match(/(\d+)\s*x\s*(\d+)/)!;
   width = parseInt(sizeMatch[1]);
@@ -340,9 +342,16 @@ const getInfo = async (arg: string) => {
   console.log(ARTWORK_ID, width, height);
 };
 
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
 const arg = process.argv[2];
 if (arg) {
   getInfo(arg).then(() => downloader());
 } else {
-  downloader();
+  console.log("You did not give a URL");
 }
