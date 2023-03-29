@@ -51,7 +51,6 @@ function squareTile(actualSize: number) {
     widthMedium: width / numPower,
     heightMedium: height / numPower,
   };
-
   // Calculate the gaps between tiles
   // const gapSize = Math.round(actualSize / 0.9 - actualSize);
   const gapSize = actualSize / 0.9 - actualSize;
@@ -96,8 +95,8 @@ function squareTile(actualSize: number) {
   // Generate the URL for the tile
   const urlParams = new URLSearchParams({
     artworkid: ARTWORK_ID,
-    widthmedium: adjustAspect().widthMedium.toString(),
-    heightmedium: adjustAspect().heightMedium.toString(),
+    widthmedium: widthMedium.toString(),
+    heightmedium: heightMedium.toString(),
     x: "0",
     y: "0",
   });
@@ -322,6 +321,8 @@ const getInfo = async (arg: string) => {
     const res = await fetch(baseUrl);
     const text = await res.text();
     const $ = load(text);
+    const ogTitle = $('meta[property="og:title"]').attr("content");
+    console.log(ogTitle);
     const script = $('script:contains("globalArtworkId")').html();
     globalArtworkId = script!.match(/globalArtworkId\s*=\s*'(\d+)';/)![1];
   } else {
@@ -336,10 +337,9 @@ const getInfo = async (arg: string) => {
   width = parseInt(sizeMatch[1]);
   height = parseInt(sizeMatch[2]);
 
-  console.log(width, height);
-
   ARTWORK_ID = globalArtworkId;
-  console.log(ARTWORK_ID, width, height);
+  console.log(`ArtworkID: ${ARTWORK_ID}`);
+  console.log(`Image sizes: ${width}x${height}`);
 };
 
 const readline = require("readline");
@@ -353,6 +353,6 @@ const arg = process.argv[2];
 if (arg) {
   getInfo(arg).then(() => downloader());
 } else {
-  console.log("You did not give a URL");
+  console.log("You did not give a URL or ArtworkId");
   process.exit();
 }
