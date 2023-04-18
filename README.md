@@ -4,7 +4,7 @@
 
 Download full size images from **[Fine Art America](https://fineartamerica.com/)**, **[Conde Nast Store](https://condenaststore.com/)**, **[Photos.com](https://photos.com/)** and **[Pixels.com](https://pixels.com/)**. You can check results in the _[Results Gallery](./Gallery.md)_.
 
-## Usage
+## How to Use
 
 1. Download the executable from [Releases](https://github.com/agmmnn/fineartdown/releases).
 1. Open your terminal in the path where the executable file is located.
@@ -14,7 +14,7 @@ Download full size images from **[Fine Art America](https://fineartamerica.com/)
 > ./fineartdown-win https://fineartamerica.com/featured/dancing-octopus-barathieu-gabriel.html
 ```
 
-### From npm
+### Or from npm
 
 ```
 npm install -g fineartdown
@@ -31,6 +31,22 @@ pnpm i
 
 pnpm fineartdown <url or artworkid>
 ```
+
+## How to Use (Non-technical users, Windows)
+
+1. Download the executable from [Releases](https://github.com/agmmnn/fineartdown/releases).
+2. Navigate to the folder where the executable file is located. Once you have located the folder, hold down the **Shift** key on your keyboard and **right-click** on an empty space within the folder. This will open a context menu.
+3. In the context menu, you should see an option that says _"Open PowerShell window here"_ or _"Open command window here"_ or _"Open Terminal"_ depending on your Windows version. Select this option, and a new terminal window will open next to the exe file.
+
+![](https://i.imgur.com/cI5AGE1.png)
+
+> Note: If you don't see the these options you can install [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701) from Microsoft Store.
+
+4. Run the command: `./fineartdown-[your-os] <url>`
+
+![](https://i.imgur.com/gEDEjSU.png)
+
+5. Press enter to run the command, and the program will download the image to your current directory.
 
 ## How it works?
 
