@@ -1,3 +1,5 @@
+> _Note: It seems that some folks from fineartamerica.com have seen the repo and made changes that affect the functionality of the reverse engineering approach used in this repository. Please be aware that the current code may not work as expected._
+
 ![](https://i.imgur.com/fjyFiqX.png)
 
 # FineArtDown
